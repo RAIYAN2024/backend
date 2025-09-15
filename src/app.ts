@@ -4,9 +4,9 @@ import cors from "cors";
 import { createServer } from "http";
 import cookieParser from "cookie-parser";
 import { connectDB } from "@/config/db.config";
+import serverless from "serverless-http";
 const app = express();
 const server = createServer(app);
-
 app.set("trust proxy", true);
 app.use(cookieParser());
 app.use(express.json());
