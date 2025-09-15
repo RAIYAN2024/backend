@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/app.ts"],
+  "sourcesContent": ["import \"dotenv/config\";\r\nimport express from \"express\";\r\nimport cookieParser from \"cookie-parser\";\r\nimport serverless from \"serverless-http\";\r\nimport cors from \"cors\";\r\nconst app = express();\r\napp.set(\"trust proxy\", true);\r\napp.use(cookieParser());\r\napp.use(express.json());\r\napp.use(cors());\r\napp.get(\"/\", async (req, res) => {\r\n  res.json({\r\n    success: true,\r\n    message: \"Server running on port 4600\",\r\n    publicIP: req.ip,\r\n  });\r\n});\r\n\r\nexport const handler = serverless(app);\r\n"],
+  "mappings": ";AAAA,OAAO;AACP,OAAO,aAAa;AACpB,OAAO,kBAAkB;AACzB,OAAO,gBAAgB;AACvB,OAAO,UAAU;AACjB,IAAM,MAAM,QAAQ;AACpB,IAAI,IAAI,eAAe,IAAI;AAC3B,IAAI,IAAI,aAAa,CAAC;AACtB,IAAI,IAAI,QAAQ,KAAK,CAAC;AACtB,IAAI,IAAI,KAAK,CAAC;AACd,IAAI,IAAI,KAAK,OAAO,KAAK,QAAQ;AAC/B,MAAI,KAAK;AAAA,IACP,SAAS;AAAA,IACT,SAAS;AAAA,IACT,UAAU,IAAI;AAAA,EAChB,CAAC;AACH,CAAC;AAEM,IAAM,UAAU,WAAW,GAAG;",
+  "names": []
+}
